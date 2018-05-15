@@ -16,5 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('about', function () {
-    return "About us";
+    return view('about', ['name' => 'SEDC', 'year' => 2018, 'classes' => ['php', 'js']]);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

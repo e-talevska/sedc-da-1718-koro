@@ -2,20 +2,13 @@
 
 @section('mainContent')
     <h1>Categories</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Slug</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($categories as $category)
-            <tr>
-                <td>{{ $category->name }}</td>
-                <td>{{ $category->slug }}</td>
-            </tr>
+    <ul>
+        @foreach($categories as $category)
+            <li>
+                <p>{{ $category->name }}</p>
+                <p>{{ $category->slug }}</p>
+            </li>
             @endforeach
-        </tbody>
+    </ul>
     </table>
 @endsection

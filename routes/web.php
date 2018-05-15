@@ -24,3 +24,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('categories', 'CategoryController@index');
+
+Route::get('categories/create', 'CategoryController@create');

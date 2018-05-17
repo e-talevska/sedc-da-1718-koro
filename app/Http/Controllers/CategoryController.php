@@ -36,7 +36,18 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        var_dump($request);
+        $this->validate($request, [
+            'name' => 'required|min:3',
+            'slug' => 'required|unique:categories,slug'
+        ]);
+
+        \App\Category::create($request->all());
+        
+//        $category = new \App\Category();
+//        $category->name = $request->get('name');
+//        $category->slug = $request->get('slug');
+//        $category->save();
+        return redirect('categories');
     }
 
     /**
@@ -56,9 +67,10 @@ class CategoryController extends Controller
      * @param  \App\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit($id)
     {
-        //
+        $category = \App\Category::find($id);
+        return view('category.edit', ['category' => $category]);
     }
 
     /**

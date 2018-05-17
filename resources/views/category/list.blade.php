@@ -15,6 +15,8 @@
             <tr>
                 <td>{{ $category->name }}</td>
                 <td>{{ $category->slug }}</td>
+                <td><a href='{{ url("categories/".$category->id."/edit" ) }}'>edit</a></td>
+                <td><a >delete</a></td>
             </tr>
             @endforeach
         </tbody>

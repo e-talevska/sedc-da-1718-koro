@@ -2,6 +2,7 @@
 
 @section('mainContent')
     <h1>Categories</h1>
+    <a href="{{ url('/categories/create') }}">Add new category</a>
     <table>
         <thead>
             <tr>

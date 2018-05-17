@@ -10,5 +10,4 @@
             </li>
             @endforeach
     </ul>
-    </table>
 @endsection
